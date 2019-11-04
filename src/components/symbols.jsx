@@ -7,7 +7,13 @@ import { List, AutoSizer } from "react-virtualized";
 class Symbols extends Component {
   state = {
     symbols: this.props.symbols
+    //history: this.props.history
   };
+
+  constructor(props) {
+    super(props);
+    this.handleBack = this.handleBack.bind(this);
+  }
 
   render() {
     return (
@@ -45,14 +51,12 @@ class Symbols extends Component {
         key={key}
         style={style}
       >
-        <Link to="/" className="text-decoration-none text-dark">
-          <li
-            className="list-group-item btn-light"
-            style={{ width: "calc(100% - 15px)" }}
-          >
-            <Symbol symbol={symbol.symbol} name={symbol.name} />
-          </li>
-        </Link>
+        <li
+          className="list-group-item btn-light"
+          style={{ width: "calc(100% - 15px)" }}
+        >
+          <Symbol symbol={symbol.symbol} name={symbol.name} />
+        </li>
       </div>
     );
   }
@@ -66,9 +70,14 @@ class Symbols extends Component {
     } else symbols = Array(symbol);
 
     localStorage.setItem("symbols", JSON.stringify(symbols));
-    console.log(symbols);
+    //console.log(symbols);
     //console.log(JSON.parse(localStorage.getItem("symbol")));
+    this.handleBack();
   };
+
+  handleBack() {
+    this.props.history.goBack();
+  }
 }
 
 export default Symbols;

@@ -10,7 +10,8 @@ export const TOKEN = "?token=pk_5e8577fd11eb4469be629c5e2de8023f";
 class App extends Component {
   state = {
     symbols: [],
-    symbolsFiltered: []
+    symbolsFiltered: [],
+    searchBox: ""
   };
 
   render() {
@@ -21,7 +22,9 @@ class App extends Component {
           <Switch>
             <Route
               path="/symbols"
-              component={() => <Symbols symbols={this.state.symbolsFiltered} />}
+              component={props => (
+                <Symbols {...props} symbols={this.state.symbolsFiltered} />
+              )}
             />
             <Route path="/" component={Quotes} />
           </Switch>
@@ -53,6 +56,7 @@ class App extends Component {
   handleOnChange = event => {
     //console.log(event.target.value);
     const search = event.target.value.toLowerCase();
+    this.setState({ searchBox: event });
     const symbols = this.state.symbols.filter(symbol =>
       symbol.name.toLowerCase().includes(search)
     );
