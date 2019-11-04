@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/stockify-web/precache-manifest.8d02eaa87ced0a2bea2aecbcf7180c93.js"
+  "/stockify-web/precache-manifest.32903e21d68791ad09a7e432cdabb620.js"
 );
 
 self.addEventListener('message', (event) => {
