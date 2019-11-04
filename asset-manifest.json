@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/stockify-web/static/js/main.0aca8bdd.chunk.js",
-    "main.js.map": "/stockify-web/static/js/main.0aca8bdd.chunk.js.map",
+    "main.js": "/stockify-web/static/js/main.d1a29ea2.chunk.js",
+    "main.js.map": "/stockify-web/static/js/main.d1a29ea2.chunk.js.map",
     "runtime-main.js": "/stockify-web/static/js/runtime-main.bafd4a8d.js",
     "runtime-main.js.map": "/stockify-web/static/js/runtime-main.bafd4a8d.js.map",
     "static/css/2.833dd627.chunk.css": "/stockify-web/static/css/2.833dd627.chunk.css",
-    "static/js/2.9b70284f.chunk.js": "/stockify-web/static/js/2.9b70284f.chunk.js",
-    "static/js/2.9b70284f.chunk.js.map": "/stockify-web/static/js/2.9b70284f.chunk.js.map",
+    "static/js/2.2cd6cbd4.chunk.js": "/stockify-web/static/js/2.2cd6cbd4.chunk.js",
+    "static/js/2.2cd6cbd4.chunk.js.map": "/stockify-web/static/js/2.2cd6cbd4.chunk.js.map",
     "index.html": "/stockify-web/index.html",
-    "precache-manifest.24c16e2a587e23af0aa214b63f892648.js": "/stockify-web/precache-manifest.24c16e2a587e23af0aa214b63f892648.js",
+    "precache-manifest.dfdef6dce670bcd9d2953f744832f337.js": "/stockify-web/precache-manifest.dfdef6dce670bcd9d2953f744832f337.js",
     "service-worker.js": "/stockify-web/service-worker.js",
     "static/css/2.833dd627.chunk.css.map": "/stockify-web/static/css/2.833dd627.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.bafd4a8d.js",
     "static/css/2.833dd627.chunk.css",
-    "static/js/2.9b70284f.chunk.js",
-    "static/js/main.0aca8bdd.chunk.js"
+    "static/js/2.2cd6cbd4.chunk.js",
+    "static/js/main.d1a29ea2.chunk.js"
   ]
 }

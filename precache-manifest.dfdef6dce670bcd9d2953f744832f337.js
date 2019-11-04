@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "937aad56b85e2e7cab1056d704298669",
+    "revision": "9805de699ddef9b832f8f4cf5c93349b",
     "url": "/stockify-web/index.html"
   },
   {
-    "revision": "24ff97d26731152c55de",
+    "revision": "518a6e29f567fad99ae0",
     "url": "/stockify-web/static/css/2.833dd627.chunk.css"
   },
   {
-    "revision": "24ff97d26731152c55de",
-    "url": "/stockify-web/static/js/2.9b70284f.chunk.js"
+    "revision": "518a6e29f567fad99ae0",
+    "url": "/stockify-web/static/js/2.2cd6cbd4.chunk.js"
   },
   {
-    "revision": "e72bd6aa036757b3744d",
-    "url": "/stockify-web/static/js/main.0aca8bdd.chunk.js"
+    "revision": "f83b0f6f7eac207f6171",
+    "url": "/stockify-web/static/js/main.d1a29ea2.chunk.js"
   },
   {
     "revision": "7f38c6e86501b0db1a3c",
