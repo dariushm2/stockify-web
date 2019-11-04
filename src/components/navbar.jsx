@@ -8,7 +8,7 @@ class NavBar extends Component {
       <nav className="navbar fixed-top navbar-light bg-dark">
         <Link className="w-100" to="/symbols">
           <input
-            ref="symbolInput"
+            onChange={this.handleOnChange}
             type="text"
             className="text-dark w-100 rounded border-0 m-1 p-2 h5"
             placeholder="Search for stocks"
@@ -17,6 +17,10 @@ class NavBar extends Component {
       </nav>
     );
   }
+
+  handleOnChange = event => {
+    this.props.onChange(event);
+  };
 }
 
 export default NavBar;

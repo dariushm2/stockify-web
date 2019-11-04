@@ -6,20 +6,20 @@ import { List, AutoSizer } from "react-virtualized";
 
 class Symbols extends Component {
   state = {
-    symbols: []
+    symbols: this.props.symbols
   };
 
   render() {
     return (
       <div className="">
-        <AutoSizer style={{ width: "75%", height: "90vh" }}>
+        <AutoSizer style={{ width: "75%", height: "calc(100vh - 65px)" }}>
           {({ width, height }) => (
             <ul className="list-group">
               <List
                 rowCount={this.state.symbols.length}
                 width={width}
                 height={height}
-                rowHeight={70}
+                rowHeight={84}
                 rowRenderer={this.rowRenderer.bind(this)}
                 overscanRowCount={3}
               />
@@ -46,32 +46,16 @@ class Symbols extends Component {
         style={style}
       >
         <Link to="/" className="text-decoration-none text-dark">
-          <li className="list-group-item" style={{ width: "96%" }}>
+          <li
+            className="list-group-item btn-light"
+            style={{ width: "calc(100% - 15px)" }}
+          >
             <Symbol symbol={symbol.symbol} name={symbol.name} />
           </li>
         </Link>
       </div>
     );
   }
-
-  componentDidMount() {
-    this.fetchSymbols();
-  }
-
-  fetchSymbols = async () => {
-    const data = await fetch(this.buildSymbolsUrl());
-    const symbols = await data.json();
-    console.log(symbols.length);
-    this.buildSymbolsList(symbols);
-  };
-
-  buildSymbolsList = symbols => {
-    this.setState({ symbols });
-  };
-
-  buildSymbolsUrl = () => {
-    return BASE_URL + "ref-data/symbols" + TOKEN;
-  };
 
   handleSymbolClick = symbol => {
     //localStorage.removeItem("symbols");
@@ -88,18 +72,3 @@ class Symbols extends Component {
 }
 
 export default Symbols;
-
-// { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." },
-//       { symbol: "AAPL", name: "Apple Inc." },
-//       { symbol: "GOOG", name: "Google Ltd." }

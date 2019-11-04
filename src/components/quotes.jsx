@@ -50,7 +50,6 @@ class Quotes extends Component {
 
   fetchQuotes = async () => {
     await this.getWatchList().forEach(symbol => {
-      console.log(symbol);
       fetch(this.buildQuoteUrl(symbol))
         .then(response => response.json())
         .then(this.buildQuotesList)
@@ -74,11 +73,10 @@ class Quotes extends Component {
   };
 
   buildQuotesList = quote => {
-    console.log(quote);
     let quotes = this.state.quotes;
     quotes.push(quote);
     this.setState({ quotes });
-    console.log(this.state.quotes);
+    //console.log(this.state.quotes);
   };
 }
 
