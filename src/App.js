@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div className="pt-70">
-          <NavBar onClick={this.onSymbolSearch} />
+          <NavBar />
           <Switch>
             <Route path="/symbols" component={Symbols} />
             <Route path="/" component={Quotes} />
@@ -28,8 +28,6 @@ class App extends Component {
     document.body.style.paddingTop = "65px";
     console.log("hey");
   }
-
-  onSymbolSearch = () => {};
 }
 
 export default App;

@@ -8,10 +8,11 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-virtualized": "^9.21.1"
   },
   "scripts": {
-    "deploy": "npm run build && gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build --repo git@github.com:dariushm2/stockify-web.git",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -6,26 +6,15 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar fixed-top navbar-light bg-dark">
-        <Link
-          className="w-100"
-          to="/symbols"
-          onClick={this.props.onSymbolSearch}
-        >
+        <Link className="w-100" to="/symbols">
           <input
             ref="symbolInput"
             type="text"
-            className="bg-secondary text-light w-100 rounded border-0 m-1 p-2 form-control"
-            placeholder="GOOG"
+            className="text-dark w-100 rounded border-0 m-1 p-2 h5"
+            placeholder="Search for stocks"
           />
         </Link>
       </nav>
-    );
-  }
-
-  componentDidMount() {
-    this.refs.symbolInput.setAttribute(
-      "style",
-      ".form-control::-webkit-input-placeholder { color: #C0C0C0; }"
     );
   }
 }

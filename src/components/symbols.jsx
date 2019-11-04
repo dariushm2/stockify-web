@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Symbol from "./symbol";
 import { BASE_URL, TOKEN } from "../App";
 import { Link } from "react-router-dom";
+import { List, AutoSizer } from "react-virtualized";
 
 class Symbols extends Component {
   state = {
@@ -10,34 +11,51 @@ class Symbols extends Component {
 
   render() {
     return (
-      <div className="mr-200">
-        <ul className="m-2 list-group">
-          {this.state.symbols.map(symbol => (
-            <Link to="/" className="text-decoration-none">
-              <li
-                key={symbol.symbol}
-                id={symbol.symbol}
-                className="list-group-item  btn-light"
-                onClick={() => this.handleSymbolClick(symbol.symbol)}
-              >
-                <Symbol symbol={symbol.symbol} name={symbol.name} />
-              </li>
-            </Link>
-          ))}
-        </ul>
+      <div className="">
+        <AutoSizer style={{ width: "75%", height: "90vh" }}>
+          {({ width, height }) => (
+            <ul className="list-group">
+              <List
+                rowCount={this.state.symbols.length}
+                width={width}
+                height={height}
+                rowHeight={70}
+                rowRenderer={this.rowRenderer.bind(this)}
+                overscanRowCount={3}
+              />
+            </ul>
+          )}
+        </AutoSizer>
+      </div>
+    );
+  }
+
+  rowRenderer({
+    key, // Unique key within array of rows
+    index, // Index of row within collection
+    isScrolling, // The List is currently being scrolled
+    isVisible, // This row is visible within the List (eg it is not an overscanned row)
+    style // Style object to be applied to row (to position it)
+  }) {
+    const symbol = this.state.symbols[index];
+    return (
+      <div
+        onClick={() => this.handleSymbolClick(symbol.symbol)}
+        className="m-2 "
+        key={key}
+        style={style}
+      >
+        <Link to="/" className="text-decoration-none text-dark">
+          <li className="list-group-item" style={{ width: "96%" }}>
+            <Symbol symbol={symbol.symbol} name={symbol.name} />
+          </li>
+        </Link>
       </div>
     );
   }
 
   componentDidMount() {
-    //this.fetchSymbols();
-
-    const symbols = [
-      { symbol: "AAPL", name: "Apple Inc." },
-      { symbol: "GOOG", name: "Google Ltd." }
-    ];
-
-    this.buildSymbolsList(symbols);
+    this.fetchSymbols();
   }
 
   fetchSymbols = async () => {
@@ -70,3 +88,18 @@ class Symbols extends Component {
 }
 
 export default Symbols;
+
+// { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." },
+//       { symbol: "AAPL", name: "Apple Inc." },
+//       { symbol: "GOOG", name: "Google Ltd." }
