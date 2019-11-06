@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Symbol from "./symbol";
-import { BASE_URL, TOKEN } from "../App";
-import { Link } from "react-router-dom";
 import { List, AutoSizer } from "react-virtualized";
 
 class Symbols extends Component {

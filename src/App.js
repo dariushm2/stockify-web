@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
-import Quotes from "./components/quotes";
+import WatchList from "./components/watchlist";
 import Symbols from "./components/symbols";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -26,7 +26,7 @@ class App extends Component {
                 <Symbols {...props} symbols={this.state.symbolsFiltered} />
               )}
             />
-            <Route path="/" component={Quotes} />
+            <Route path="/" component={WatchList} />
           </Switch>
         </div>
       </Router>
@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    document.body.style.paddingTop = "65px";
     this.fetchSymbols();
   }
 
@@ -66,10 +67,6 @@ class App extends Component {
   buildSymbolsFilteredList = symbols => {
     this.setState({ symbolsFiltered: symbols });
   };
-
-  componentWillMount() {
-    document.body.style.paddingTop = "65px";
-  }
 }
 
 export default App;
