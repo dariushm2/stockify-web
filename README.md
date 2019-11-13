@@ -1,4 +1,7 @@
-A simple stock watchlist. Simply search for your favorite stocks and you'll get a list of nice brief quotes.
+## [Stockify](https://dariushm2.github.io/stockify-web/#/)
+A simple stock watchlist. Simply search for your favorite stocks and you'll get a list of nice brief quotes. [Open Stockify](https://dariushm2.github.io/stockify-web/#/)
+
+
 
 ### `Technical specification`
 

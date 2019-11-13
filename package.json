@@ -13,7 +13,7 @@
     "react-virtualized": "^9.21.1"
   },
   "scripts": {
-    "deploy": "npm run build && gh-pages -d build --repo git@github.com:dariushm2/stockify-web.git",
+    "deploy": "npm run build && gh-pages -d build origin",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
